@@ -44,3 +44,17 @@ Flask run
 ## VS code
 Code -n . —> opens directory on vscode
 Code -r filename.ext to open file in vscode
+
+---
+## Heroku deployment
+make sure to:
+	have setup.sh (touch setup.sh)
+	install gunicorn (pip install gunicorn)
+	create Procfile (touch Procfile) --> web: gunicorn app:app
+	run migrations
+heroku create name_of_your_app
+git remote add heroku heroku_git_url
+heroku addons:create heroku-postgresql:hobby-dev --app name_of_your_application
+heroku config --app name_of_your_application
+git push heroku master
+heroku run python manage.py db upgrade --app name_of_your_application
