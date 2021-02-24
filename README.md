@@ -3,7 +3,6 @@
 ## Postgres server: 
 Start | Stop | Status postres db
 pg_ctl -D /usr/local/var/postgres start
-
 Kill PID ps -fA | grep python
 
 ---
