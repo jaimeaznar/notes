@@ -82,3 +82,7 @@ heroku config --app name_of_your_application
 git push heroku master
 
 heroku run python manage.py db upgrade --app name_of_your_application
+
+---
+Access heroku db for direct changes
+heroku pg:psql
