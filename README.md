@@ -86,3 +86,15 @@ heroku run python manage.py db upgrade --app name_of_your_application
 ---
 Access heroku db for direct changes
 heroku pg:psql
+
+---
+# DOCKER
+
+DOCKER: (docker needs to be started)
+- Build image: docker-compose up --build
+- Stop app: docker-compose stop (also stops containers)
+- Start it again: docker-compose up
+
+Clean up:
+- Remove stopped containers: docker-compose rm -f
+- Remove dangling images (every week or so): docker rmi -f $(docker images -qf dangling=true)
