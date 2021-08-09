@@ -95,6 +95,11 @@ DOCKER: (docker needs to be started)
 - Stop app: docker-compose stop (also stops containers)
 - Start it again: docker-compose up
 
+CLI:
+- testing: docker-compose exec website longfields test
+- coverage testing: docker-compose exec website longfields cov
+- styling check: docker-compose exec website longfields flake8
+
 Clean up:
 - Remove stopped containers: docker-compose rm -f
 - Remove dangling images (every week or so): docker rmi -f $(docker images -qf dangling=true)
