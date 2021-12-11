@@ -104,6 +104,9 @@ Clean up:
 - Remove stopped containers: docker-compose rm -f
 - Remove dangling images (every week or so): docker rmi -f $(docker images -qf dangling=true)
 
+Remove volumes:
+- docker-compose down --volumes 
+
 Postgres:
 	if: PostgreSQL Database directory appears to contain a database; Skipping initialization
 		- : docker-compose down --volumes
