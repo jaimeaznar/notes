@@ -33,6 +33,8 @@ docker-compose exec website alembic revision -m "create foo table"
 docker-compose exec website alembic upgrade head (last one)
 docker-compose exec website alembic downgrade -1 (to previous state)
 docker-compose exec website alembic history --verbose
+docker-compose exec website alembic revision --autogenerate -m "add foobar column to bar table" (avoid modifying app and migration doc)
+
   
 ---
 ## Requirements
