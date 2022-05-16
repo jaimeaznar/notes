@@ -15,6 +15,10 @@ Createdb name
 
 \q exit (quit)
 
+## DB
+docker-compose exec website longfields db
+docker-compose exec website longfields db reset --with-testdb
+
 ## migrations
 If in manager 
 
@@ -23,6 +27,12 @@ If in manager
 	python manage.py db migrate 
 	
 	python manage.py db upgrade
+
+docker-compose exec website alembic current
+docker-compose exec website alembic revision -m "create foo table"
+docker-compose exec website alembic upgrade head (last one)
+docker-compose exec website alembic downgrade -1 (to previous state)
+docker-compose exec website alembic history --verbose
   
 ---
 ## Requirements
